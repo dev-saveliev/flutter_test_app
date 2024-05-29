@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test_app/router/router_configuration.dart';
-import 'package:flutter_test_app/screens/intro_screen.dart';
-import 'package:flutter_test_app/screens/login_screen.dart';
-import 'package:go_router/go_router.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

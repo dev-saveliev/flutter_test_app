@@ -1,10 +1,13 @@
 import 'package:flutter_test_app/screens/intro_screen.dart';
-import 'package:flutter_test_app/screens/login_screen.dart';
+import 'package:flutter_test_app/screens/login/login_screen.dart';
+import 'package:flutter_test_app/screens/main_screen.dart';
+import 'package:flutter_test_app/screens/test_screen.dart';
 import 'package:go_router/go_router.dart';
 
 enum RouteName {
   root,
-  login
+  login,
+  main
 }
 
 extension RouteNameExtension on RouteName {
@@ -14,6 +17,8 @@ extension RouteNameExtension on RouteName {
         return '/';
       case RouteName.login:
         return '/login';
+      case RouteName.main:
+        return '/main';
     }
   }
 }
@@ -23,12 +28,19 @@ class RouterConfiguration {
     routes: [
       GoRoute(
         path: RouteName.root.path,
-        builder: (context, state) => const IntroScreen(),
+//        builder: (context, state) => const IntroScreen(),
+//        builder: (context, state) => HelloWorldWidget(),
+        builder: (context, state) => LoginScreen(),
       ),
       GoRoute(
         path: RouteName.login.path,
         builder: (context, state) => LoginScreen(),
       ),
+      GoRoute(
+        path: RouteName.main.path,
+        builder: (context, state) => MainScreen(),
+      ),
+
     ],
   );
 }
