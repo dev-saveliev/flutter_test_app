@@ -27,7 +27,7 @@ class RouterConfiguration {
       ),
       GoRoute(
         path: RouteName.login.path,
-        builder: (context, state) => const LoginScreen(),
+        builder: (context, state) => LoginScreen(),
       ),
     ],
   );
