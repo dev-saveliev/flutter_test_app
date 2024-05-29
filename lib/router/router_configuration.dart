@@ -19,7 +19,6 @@ extension RouteNameExtension on RouteName {
 }
 
 class RouterConfiguration {
-
   final routes = GoRouter(
     routes: [
       GoRoute(
