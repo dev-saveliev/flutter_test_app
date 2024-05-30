@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test_app/router/router_configuration.dart';
-import 'package:flutter_test_app/screens/login/login_logic.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reactive_forms/reactive_forms.dart';
+
+import 'login_logic.dart';
 
 enum FormFields { email, password }
 
@@ -38,7 +39,19 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         title: const Text('Login'),
       ),
       body: Center(
-        child: _buildForm(),
+        child: Column(
+          children: [
+            _buildForm(),
+            const SizedBox(height: 16),
+            const Text('Don\'t have an account? Create it!'),
+            TextButton(
+              onPressed: () {
+                context.push(RouteName.registration.path);
+              },
+              child: const Text('Create an account'),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -62,19 +75,24 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
               formControlName: FormFields.email.name,
               decoration: const InputDecoration(hintText: 'Email'),
             ),
+            const SizedBox(height: 8),
             ReactiveTextField(
               formControlName: FormFields.password.name,
               obscureText: true,
               decoration: const InputDecoration(hintText: 'Password'),
             ),
+            const SizedBox(height: 16),
             ReactiveFormConsumer(
               builder: (context, form, child) {
                 return ElevatedButton(
-                  onPressed: _form!.valid ? () => _logic.login(
-                    login: _form.control(FormFields.email.name).value,
-                    password: _form.control(FormFields.password.name).value,
-                    ref: ref,
-                  ) : null,
+                  onPressed: _form!.valid
+                      ? () => _logic.login(
+                            login: _form.control(FormFields.email.name).value,
+                            password:
+                                _form.control(FormFields.password.name).value,
+                            ref: ref,
+                          )
+                      : null,
                   child: const Text('Submit'),
                 );
               },

@@ -11,7 +11,7 @@ class IntroScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () => context.go(RouteName.login.path),
-          child: const Text('Next page'),
+          child: const Text('Start'),
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:reactive_forms_annotations/reactive_forms_annotations.dart';
+part 'test_form_generator.gform.dart';
 
 @Rf()
 class Basic {
