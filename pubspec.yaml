@@ -38,6 +38,7 @@ dependencies:
   go_router: ^14.1.4
   riverpod: ^2.5.1
   flutter_riverpod: ^2.5.1
+  hooks_riverpod: ^2.5.1
   reactive_forms:
   reactive_forms_annotations:
 

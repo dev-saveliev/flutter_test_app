@@ -1,20 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_test_app/screens/news_screen.dart';
 
 class MainScreen extends ConsumerWidget {
   MainScreen({super.key});
 
-  static const List<Widget> _pages = <Widget>[
-    Icon(
-      Icons.notes,
-      size: 150,
-    ),
-    Icon(
+  static final List<Widget> _pages = <Widget>[
+    NewsScreen(),
+    const Icon(
       Icons.people,
       size: 150,
     ),
-    Icon(
+    const Icon(
       Icons.chat,
       size: 150,
     ),
