@@ -5,5 +5,5 @@ enum MethodType {
 abstract class Request<T> {
   MethodType type();
 
-  Future<T?> run();
+  Future<T> run();
 }

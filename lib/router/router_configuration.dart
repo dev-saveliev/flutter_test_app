@@ -32,7 +32,9 @@ class RouterConfiguration {
     routes: [
       GoRoute(
         path: RouteName.root.path,
-        builder: (context, state) => const IntroScreen(),
+//        builder: (context, state) => const IntroScreen(),
+        builder: (context, state) => MainScreen(),
+
 //        builder: (context, state) => RegistrationScreen(),
       ),
       GoRoute(
