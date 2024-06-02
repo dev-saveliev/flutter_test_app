@@ -1,2 +1,1 @@
-final class LoginResultModel {
-}
+final class LoginResultModel { }

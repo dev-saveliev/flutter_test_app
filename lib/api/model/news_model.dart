@@ -1,2 +1,1 @@
-final class NewsModel {
-}
+final class NewsModel { }
